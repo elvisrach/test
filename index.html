@@ -4,7 +4,7 @@
 <script>
 function setCookie(cname,cvalue,exdays) {
   var d = new Date();
-  d.setTime(d.getTime() + (10000));
+  d.setTime(d.getTime() + (60000));
   var expires = "expires=" + d.toGMTString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -28,10 +28,10 @@ function getCookie(cname) {
 function checkCookie() {
   var user=getCookie("username");
   if (user != "") {
-    alert("Welcome again " + user);
+    alert("Bienvenido nuevamente. Tu respuesta fue: " + user);
   } else {
      user = prompt("Please enter your name:","");
-     if (user != "" && user != null) {
+     if (user != "SI"  && user !="si" && user != null) {
        setCookie("username", user, 30);
      }
   }
