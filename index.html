@@ -4,7 +4,7 @@
 <script>
 function setCookie(cname,cvalue,exdays) {
   var d = new Date();
-  d.setTime(d.getTime() + (10000));
+  d.setTime(d.getTime() + (20000));
   var expires = "expires=" + d.toGMTString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -30,8 +30,8 @@ function checkCookie() {
   if (user != "") {
     alert("Welcome again " + user);
   } else {
-     user = prompt("Para continuar debe aceptar nuestra política de COOKIES (Si):","");
-     if (user != "" && user != null & (user =="SI" || user =="Si" || user="si")) {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
        setCookie("username", user, 30);
      }
   }
@@ -40,7 +40,5 @@ function checkCookie() {
 </head>
 
 <body onload="checkCookie()"></body>
-
-<h1> Va el website</h1>
 
 </html>
