@@ -27,9 +27,9 @@ function getCookie(cname) {
 
 
 function checkCookie() {
-  if (user == "" ){
+
   var user=getCookie("username");
-  }
+
   do
     if (user != "") {
       alert("Welcome again " + user);
@@ -40,7 +40,7 @@ function checkCookie() {
             setCookie("username", user, 30);
             alert("Se supone que has aceptdo nuestras COOKIES");
          } else {
-           var user=getCookie("username");
+           user = prompt("ACEPTAS NUESTRAS COOKIES (SI):","");;
          }
 
        }
@@ -52,4 +52,5 @@ function checkCookie() {
 
 <body onload="checkCookie()"></body>
 
+<h1> De esto estamos hablando</h1>
 </html>
