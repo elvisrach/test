@@ -26,34 +26,21 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-  alert("Muchas gracias por su visita, pero si no acepta nuestra políticas de cookies no podrá acceder a nuestro sitio");
   var user=getCookie("username");
-  do {
   if (user != "") {
     alert("Welcome again " + user);
   } else {
-<<<<<<< HEAD
-     user = prompt("Acepta nuestras COOKIES Si o No:","");
-     if (user == "SI" || user =="si") {
-       setCookie("username", user, 4);
-       alert("GRACIAS POR ACEPTAR NUESTRAS COOKIES")
-     }
-  } while (user !="SI" && user !="si");
-=======
      user = prompt("Para continuar debe aceptar nuestra política de COOKIES (Si):","");
      if (user != "" && user != null & (user =="SI" || user =="Si" || user="si")) {
        setCookie("username", user, 30);
      }
->>>>>>> origin
   }
 }
 </script>
 </head>
 
-<body onload="checkCookie()">
+<body onload="checkCookie()"></body>
 
-<H1> Genial has aceptado nuestras Cookies</h1>
-
-</body>
+<h1> Va el website</h1>
 
 </html>
