@@ -27,9 +27,10 @@ function getCookie(cname) {
 
 
 function checkCookie() {
-
+  if (user == "" ){
+  var user=getCookie("username");
+  }
   do
-    var user=getCookie("username");
     if (user != "") {
       alert("Welcome again " + user);
     } else {
@@ -38,6 +39,8 @@ function checkCookie() {
           if (user == "Si" || user == "Si" || user =="si") {
             setCookie("username", user, 30);
             alert("Se supone que has aceptdo nuestras COOKIES");
+         } else {
+           var user=getCookie("username");
          }
 
        }
