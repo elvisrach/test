@@ -26,9 +26,9 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-  do {
   alert("Muchas gracias por su visita, pero si no acepta nuestra políticas de cookies no podrá acceder a nuestro sitio");
   var user=getCookie("username");
+  do {
   if (user != "") {
     alert("Bienvenido nuevamente. Tu respuesta fue: " + user);
   } else {
