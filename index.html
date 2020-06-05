@@ -1,29 +1,44 @@
+<!DOCTYPE html>
 <html>
-   <head>
-      <script type = "text/javascript">
-         <!--
-            function ReadCookie() {
-               var allcookies = document.cookie;
-               document.write ("All Cookies : " + allcookies );
+<head>
+<script>
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
-               // Get all the cookies pairs in an array
-               cookiearray = allcookies.split(';');
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
-               // Now take key value pair out of this array
-               for(var i=0; i<cookiearray.length; i++) {
-                  name = cookiearray[i].split('=')[0];
-                  value = cookiearray[i].split('=')[1];
-                  document.write ("Key is : " + name + " and Value is : " + value);
-               }
-            }
-         //-->
-      </script>
-   </head>
+function checkCookie() {
+  var user=getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+</script>
+</head>
 
-   <body>
-      <form name = "myform" action = "">
-         <p> click the following button and see the result:</p>
-         <input type = "button" value = "Get Cookie" onclick = "ReadCookie()"/>
-      </form>
-   </body>
+<body onload="checkCookie()"></body>
+
 </html>
