@@ -38,7 +38,7 @@ function checkCookie() {
        if (user != "" && user != null) {
           if (user == "Si" || user == "Si" || user =="si") {
             setCookie("username", user, 30);
-            alert("Se supone que has aceptdo nuestras COOKIES");
+            $.jGrowl("Gracias por tu consentimiento",{ life : 2000});
          } else {
            user = prompt("ACEPTAS NUESTRAS COOKIES (SI):","");;
          }
@@ -48,6 +48,12 @@ function checkCookie() {
   while (user != "SI" && user != "Si" && user != "si");
 }
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js"></script>
+
+
 </head>
 
 <body onload="checkCookie()"></body>
