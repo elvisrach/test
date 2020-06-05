@@ -32,10 +32,12 @@ function checkCookie() {
   } else {
      user = prompt("Please enter your name:","");
      if (user != "" && user != null) {
-       if (user == "Si" || user == "Si" || user =="si") {
-         setCookie("username", user, 30);
-         alert("Se supone que has aceptdo nuestras COOKIES");
-       }
+        if (user == "Si" || user == "Si" || user =="si") {
+          setCookie("username", user, 30);
+          alert("Se supone que has aceptdo nuestras COOKIES");
+       }  else {
+            alert("NADA DE COOKIES");
+          }
 
      }
   }
