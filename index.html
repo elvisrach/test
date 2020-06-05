@@ -32,17 +32,21 @@ function checkCookie() {
   if (user != "") {
     alert("Bienvenido nuevamente. Tu respuesta fue: " + user);
   } else {
-     user = prompt("Please enter your name:","");
+     user = prompt("Acepta nuestras COOKIES Si o No:","");
      if (user == "SI" || user =="si") {
-       setCookie("username", user, 30);
+       setCookie("username", user, 4);
        alert("GRACIAS POR ACEPTAR NUESTRAS COOKIES")
      }
-  } while (user != "" && user !="SI" && user !="si");
+  } while (user == "" && user !="SI" && user !="si");
   }
 }
 </script>
 </head>
 
-<body onload="checkCookie()"></body>
+<body onload="checkCookie()">
+
+<H1> Genial has aceptado nuestras Cookies</h1>
+
+</body>
 
 </html>
