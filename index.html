@@ -27,11 +27,14 @@ function getCookie(cname) {
 
 function checkCookie() {
   var user=getCookie("username");
+  if (user != "" && user !="SI" && user !="si") {
+    alert("Muchas gracias por su visita, pero no aceptó nuestras políticas de cookies");
+  }
   if (user != "") {
     alert("Bienvenido nuevamente. Tu respuesta fue: " + user);
   } else {
      user = prompt("Please enter your name:","");
-     if (user != "SI"  && user !="si" && user != null) {
+     if (user == "SI" || user =="si") {
        setCookie("username", user, 30);
      }
   }
