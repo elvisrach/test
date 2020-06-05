@@ -31,7 +31,7 @@ function checkCookie() {
   var user=getCookie("username");
 
   do
-    if (user != "") {
+    if (user != "" && (user =="SI" || user == "Si" || user == "si")) {
       alert("Welcome again " + user);
     } else {
        user = prompt("ACEPTAS NUESTRAS COOKIES (SI):","");
