@@ -27,8 +27,9 @@ function getCookie(cname) {
 
 
 function checkCookie() {
-  var user=getCookie("username");
+
   do
+    var user=getCookie("username");
     if (user != "") {
       alert("Welcome again " + user);
     } else {
