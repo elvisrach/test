@@ -26,6 +26,8 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
+  do {
+  alert("Muchas gracias por su visita, pero si no acepta nuestra políticas de cookies no podrá acceder a nuestro sitio");
   var user=getCookie("username");
   if (user != "") {
     alert("Bienvenido nuevamente. Tu respuesta fue: " + user);
@@ -33,10 +35,9 @@ function checkCookie() {
      user = prompt("Please enter your name:","");
      if (user == "SI" || user =="si") {
        setCookie("username", user, 30);
+       alert("GRACIAS POR ACEPTAR NUESTRAS COOKIES")
      }
-     if (user != "" && user !="SI" && user !="si") {
-       alert("Muchas gracias por su visita, pero no aceptó nuestras políticas de cookies");
-     }
+  } while (user != "" && user !="SI" && user !="si");
   }
 }
 </script>
